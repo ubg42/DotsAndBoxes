@@ -1,0 +1,295 @@
+/*
+Site wide stuff
+*/
+
+/*Makes much more sense*/
+* { 
+	box-sizing: border-box;
+	font-family: Roboto, Verdana, sans-serif;
+}
+
+h1, #finalWinner {
+    font-family: Unkempt,Georgia,serif;
+}
+
+h1 { 
+    color: blue ;
+    font-size: 3em;
+    text-align:center;
+    margin-top: 0px;
+	font-size: 350%;
+}
+h2 {
+	text-align: center;
+	font-weight: 500;
+}
+
+#svgCanvas *{
+	font-family: Unkempt,Georgia,serif;
+}
+
+/*do I want this?*/
+
+html {
+    background-repeat:repeat-x;
+    background-color: white;
+    background-size: 100%;
+    background-image:url("../graphics/bin/background.png");
+    /*background: linear-gradient(blue, white 10%); /* Standard syntax */
+   /*background: repeating-linear-gradient(blue, white, white, green 10%)*/
+}
+
+body {
+	margin : 1vh;
+}
+
+table {
+    text-align:center;
+}
+
+#dandblogo {
+    width: 100%;
+    height: 100%;
+    max-height: 10vh;
+    margin-left: auto;
+    margin-right: auto;
+        
+}
+
+#page {
+    height: 98vh;
+    width : 95%;
+    max-width: 900px;
+    margin: auto;
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    background-clip: border-box;
+    background-image: url("../graphics/bin/pagecloud.png");
+    color: rgb(40, 40, 40);
+}
+
+/*needed due to box model bug I think*/
+#pageinner {
+	margin : auto;
+	padding-top: 5vh;
+	padding-left: 12%;
+	padding-right: 12%;
+}
+
+
+#menuButton {
+	display : none;
+}
+
+/*
+Per page settings
+*/
+
+
+#svgCanvas {
+	position: relative;
+	clear: both;
+	width: 100%;
+	height: 70vh;
+}
+
+#modalBox {
+    visibility: hidden;
+    position: fixed;
+    left: 0px;
+    top: 0px;
+    width:100%;
+    height:100%;
+    text-align:center;
+    z-index: 1000;
+	background-color:rgba(0,0,0,0.5);
+  	opacity : 0;
+  	display: table;
+}
+
+#modalBoxContent{
+	border:3px solid black;
+    padding:15px;
+    text-align:center;
+    background-color:white;
+	margin: 0 auto;
+  	top: 0; left: 0; bottom: 0; right: 0;
+  	max-width: 65%;
+}
+
+.tableCellHack {
+	display: table-cell;
+	vertical-align: middle;
+}
+
+#scores {
+	margin : auto;
+	display: inline;
+	padding: 0%;
+}
+#scores li{
+	display : inline;
+	
+}
+	
+#player2Score {
+	float: right;
+	font-size: 2em;
+}
+
+#player1Score {
+	float: left;
+	font-size: 2em;
+}
+
+#player1Controls *{
+	color : red;
+}
+#player1Controls{
+	color : red;
+}
+
+#player2Controls {
+	color : blue;
+}
+#player2Controls *{
+	color : blue;
+}
+
+#loadGame {
+	float: right;
+}
+
+#gameCode {
+	width: 70%;
+}
+
+#internalStats * {
+	text-align: left;
+	padding-bottom: 0px;
+}
+
+fieldset, #helpScreen, #highScores {
+	border-color: black;
+	border-style: solid;
+	border-width: 2px;
+	margin-top: -2px;
+	overflow: auto;
+}
+
+#helpScreen, #highScores {
+	padding: 10px;
+	width : 75%;
+	max-width: 700px;
+}
+
+svg {
+	overflow:visible;
+}
+
+#dAndBHeader {
+	margin: auto;
+	text-align: center;
+}
+
+#settingsButton, #helpButton, #highScoresButton {
+	width:  5.5em;
+	opacity: 0.5;
+	border-collapse: collapse;
+	border-width: 2px;
+	border-style: solid;
+	border-color: white;
+}
+
+#highScoresLoadingImg {
+	width: 5.5em;
+	margin: auto;
+}
+
+#newGameShortCutButton {
+	width:  5.5em;
+	opacity: 0.5;
+}
+
+#closeSettingsButton, #closeHelpButton, #closeHighScoresButton, #closeFinalScoresButton {
+	opacity : 0.5;
+	width: 2em;
+	float: right;
+}
+
+#finalScoreForm {
+	text-align: left;
+}
+
+#progressBar {
+	width: 3em;
+}
+
+#socialHelp{
+	float: left;
+	margin-right: 10px;
+}
+
+#progressBox {
+	position: fixed;
+	left: 12.5%;
+	bottom: 0px;
+	width: 75%;
+	height: 5vh;
+}
+
+#newGameShortCutButton:hover, 
+#settingsButton:hover,
+#highScoresButton:hover,
+#helpButton:hover,
+#closeSettingsButton:hover, 
+#closeHelpButton:hover, 
+#closeHighScoresButton:hover, 
+#closeFinalScoresButton:hover
+{
+	opacity: 1;
+}
+
+#settingsForm, #helpScreen, #highScores {
+	display: none;
+	position: absolute;
+	background-color:rgba(250,250,250,	1);
+	margin: auto;
+}
+
+#takeBackMoveButton, #showHintButton {
+	float : right;
+}
+
+menu {
+	display: inline;
+}
+
+#highScoresTable {
+	margin: auto;
+}
+
+td
+{
+	padding:5px;
+	word-wrap: break-word;
+	max-width: 140px;
+}
+
+
+@media only screen and (max-width: 939px) {
+	#dAndBHeader, #highScores {
+		font-size: 2vw;
+	}
+	
+	#helpScreen, #settingsForm, #highScores {
+		width : 100%;
+		position: absolute;
+		left : 0px;
+		max-width: 100%;
+	}
+	
+	td {
+		max-width : 20vw;
+	}
+}
